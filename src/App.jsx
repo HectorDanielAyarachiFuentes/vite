@@ -4,11 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
+    <div className="app-container">
+      <div className="logos">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -18,18 +18,21 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => setCount(count + 1)} className="count-button">
+          Incrementar contador
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+        <p className="count-text">
+          Contador: <span className="count">{count}</span>
+        </p>
+        <p className="instruction">
+          Edita <code>src/App.jsx</code> y guarda para probar HMR.
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Haz clic en los logos de Vite y React para aprender más.
       </p>
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
